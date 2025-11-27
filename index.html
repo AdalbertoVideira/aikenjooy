@@ -3,12 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -16,10 +18,593 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <link rel="stylesheet" href="./css/styles.css" />
     <title>Welcome To The Web Page</title>
   </head>
+
   <body>
-    <h1>Welcome To My Web Page</h1>
+    <!-- Navbar -->
+    <navbar class="navbar">
+      <div class="navbar__container container">
+        <div class="navbar__logo">
+          <img src="./images/logo.svg" alt="Leno" />
+        </div>
+
+        <div class="navbar__menu">
+          <ul class="navbar__menu-list">
+            <li class="navbar__menu-item">
+              <a href="#" class="navbar__menu-link">Home</a>
+            </li>
+            <li class="navbar__menu-item">
+              <a href="#features" class="navbar__menu-link">Inspirations</a>
+            </li>
+            <li class="navbar__menu-item">
+              <a href="#preview" class="navbar__menu-link">Services</a>
+            </li>
+            <li class="navbar__menu-item">
+              <a href="#details" class="navbar__menu-link">AikenBe Club</a>
+            </li>
+            <li class="navbar__menu-item">
+              <a href="#download" class="navbar__menu-link">Espace Lounge</a>
+            </li>
+            <li class="navbar__menu-item">
+              <a href="#contact" class="navbar__menu-link--button">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </navbar>
+
+    <!-- Hero -->
+    <header class="hero">
+      <video autoplay muted loop preload="auto">
+        <source src="videos/video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <div class="hero__container container">
+        <div class="hero__content">
+          <h1>Osez l’expérience !</h1>
+          <p>
+            Agence tournée autour du voyage, de l’expérience et de la
+            communication. Des séjours sur mesure, des événements professionnels
+            et des histoires à vivre, du premier contact au souvenir partagé.
+          </p>
+          <div class="hero__btns">
+            <a href="#" class="btn">Contactez-nous</a>
+            <a href="#" class="btn btn--ghost">Voir les inspirations</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- About -->
+    <section class="about">
+      <div class="flex__container container">
+        <div class="section__body">
+          <h2 class="section__title">Notre histoire</h2>
+          <p class="section__lead">
+            De la passion pour l’immersion culturelle est née Aikenjooy&nbsp;:
+            un hub de voyage et de communication qui conçoit des expériences
+            authentiques, durables et mémorables.
+          </p>
+          <ul>
+            <li>
+              Accompagnement personnalisé par des <em>Travel Designers</em>.
+            </li>
+            <li>Réseau de partenaires triés sur le volet.</li>
+            <li>Suivi avant, pendant et après votre voyage.</li>
+          </ul>
+          <a href="#" class="btn btn--ghost">Découvrir nos services</a>
+        </div>
+
+        <!-- Card -->
+        <div class="card">
+          <button>
+            <div class="card__media">
+              <!-- Poster + click-to-play pour performance. Remplacez data-src par l’URL YouTube/Vimeo -->
+              <div class="card__media-vid">
+                <img
+                  src="https://picsum.photos/id/1005/1280/800"
+                  alt="Aperçu de la vidéo Aikenjooy"
+                  loading="lazy"
+                />
+                <span class="icon">
+                  <i class="fa-solid fa-circle-play"></i>
+                </span>
+              </div>
+            </div>
+            <div class="card__body">
+              <h3>On parle de nous</h3>
+              <p>
+                Visionnez une minute d’évasion et de témoignages. Sous-titres
+                disponibles.
+              </p>
+            </div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services">
+      <div class="services__container container">
+        <h2 class="section__title">Services</h2>
+        <p class="section__lead">
+          Pour les particuliers et les professionnels — du séjour sur mesure à
+          l'organisation de séminaires et campagnes de communication.
+        </p>
+
+        <!-- Grid -->
+        <div class="services__crads-grid grid">
+          <!-- Card 1 -->
+          <div class="card">
+            <button>
+              <div class="card__media">
+                <div class="card__media-img">
+                  <img
+                    src="https://picsum.photos/id/1011/1280/800"
+                    alt="Séjour sur mesure pour particuliers"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div class="card__body">
+                <h3>Particuliers</h3>
+                <p>
+                  Séjour sur mesure · À la poursuite de mon film préféré · Lune
+                  de miel
+                </p>
+              </div>
+            </button>
+          </div>
+          <!-- Card 2 -->
+          <div class="card">
+            <button>
+              <div class="card__media">
+                <div class="card__media-img">
+                  <img
+                    src="https://picsum.photos/id/1040/1280/800"
+                    alt="Organisation de séminaire et événements pro"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div class="card__body">
+                <h3>Professionnels</h3>
+                <p>
+                  Organisation de séminaire · Séjour d'orientation ·
+                  Communication digitale · Campagne publicitaire
+                </p>
+              </div>
+            </button>
+          </div>
+          <!-- Card 3 -->
+          <div class="card">
+            <button>
+              <div class="card__media">
+                <div class="card__media-img">
+                  <img
+                    src="https://picsum.photos/id/1025/1280/800"
+                    alt="Expériences de lune de miel"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div class="card__body">
+                <h3>Lune de miel</h3>
+                <p>
+                  Offres d'organisation sur mesure pour célébrer votre histoire
+                  à deux.
+                </p>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Club -->
+    <section class="club">
+      <div class="flex__container container">
+        <div class="section__body">
+          <h2 class="section__title">AikenBe Club</h2>
+          <p class="section__lead">
+            Rejoignez notre espace VIP : privilèges, salons privés, conciergerie
+            et invitations à des expériences exclusives.
+          </p>
+          <ul>
+            <li>Accès Lounge & priorisation</li>
+            <li>Avantages partenaires</li>
+            <li>Pré-ouvertures et pré-réservations</li>
+          </ul>
+          <a href="#" class="btn">Devenir membre</a>
+        </div>
+
+        <!-- Card -->
+        <div class="card">
+          <button>
+            <div class="card__media">
+              <!-- Poster + click-to-play pour performance. Remplacez data-src par l’URL YouTube/Vimeo -->
+              <div class="card__media-img">
+                <img
+                  src="https://picsum.photos/id/1001/1280/800"
+                  alt="Espace VIP AikenBe Club"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div class="card__body">
+              <h3>On parle de nous</h3>
+              <p>
+                Visionnez une minute d’évasion et de témoignages. Sous-titres
+                disponibles.
+              </p>
+            </div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lounge -->
+    <section class="lounge">
+      <div class="flex__container container">
+        <div class="section__body">
+          <h2 class="section__title">Espace Lounge</h2>
+          <p class="section__lead">
+            Des salons où l’on imagine ensemble votre voyage, devant de grandes
+            projections immersives et un café.
+          </p>
+          <p>Paris — Versailles — (à venir)</p>
+        </div>
+
+        <!-- Grid -->
+        <div class="lounge__crads-grid grid">
+          <!-- Card 1 -->
+          <div class="card">
+            <button>
+              <div class="card__media">
+                <div class="card__media-img">
+                  <img
+                    src="https://picsum.photos/id/1039/1280/800"
+                    alt="Salon de création de voyage"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div class="card__body">
+                <h3>Co-création</h3>
+                <p>Session avec un designer dédié.</p>
+              </div>
+            </button>
+          </div>
+          <!-- Card 2 -->
+          <div class="card">
+            <button>
+              <div class="card__media">
+                <div class="card__media-img">
+                  <img
+                    src="https://picsum.photos/id/1012/1280/800"
+                    alt="Ambiance chaleureuse"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div class="card__body">
+                <h3>Ambiance</h3>
+                <p>Écrin intime et technologique.</p>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inspirations (Catalogue) -->
+    <section class="inspirations">
+      <div class="container">
+        <div class="section__body">
+          <h2 class="section__title">Inspirations</h2>
+          <p class="section__lead">
+            Vous ne savez pas où aller ? Parcourez notre catalogue de
+            destinations — Osez l’expérience&nbsp;!
+          </p>
+        </div>
+        <div class="buttons">
+          <button class="btn btn--ghost">Toutes</button>
+          <button class="btn btn--ghost">Asie</button>
+          <button class="btn btn--ghost">Europe</button>
+          <button class="btn btn--ghost">Amériques</button>
+          <button class="btn btn--ghost">Afrique</button>
+        </div>
+
+        <!-- Grid -->
+        <div class="inspirations__crads-grid grid">
+          <!-- Card 1 -->
+          <div class="card">
+            <button>
+              <div class="card__media">
+                <div class="card__media-img">
+                  <img
+                    src="https://picsum.photos/id/1016/1200/800"
+                    alt="Népal"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div class="card__body">
+                <h3>Népal</h3>
+                <p>Session avec un designer dédié.</p>
+              </div>
+            </button>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card">
+            <button>
+              <div class="card__media">
+                <div class="card__media-img">
+                  <img
+                    src="https://picsum.photos/id/1031/1200/800"
+                    alt="Espagne"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div class="card__body">
+                <h3>Espagne</h3>
+                <p>Art, cuisine et lumière méditerranéenne.</p>
+              </div>
+            </button>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card">
+            <button>
+              <div class="card__media">
+                <div class="card__media-img">
+                  <img
+                    src="https://picsum.photos/id/1050/1200/800"
+                    alt="Panama City"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div class="card__body">
+                <h3>Panama City</h3>
+                <p>Canal, modernité et forêts tropicales.</p>
+              </div>
+            </button>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="card">
+            <button>
+              <div class="card__media">
+                <div class="card__media-img">
+                  <img
+                    src="https://picsum.photos/id/1027/1200/800"
+                    alt="Seychelles"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div class="card__body">
+                <h3>Seychelles</h3>
+                <p>Lagons granitiques et plages secrètes.</p>
+              </div>
+            </button>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="card">
+            <button>
+              <div class="card__media">
+                <div class="card__media-img">
+                  <img
+                    src="https://picsum.photos/id/1003/1200/800"
+                    alt="Maroc"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div class="card__body">
+                <h3>Maroc</h3>
+                <p>Atlas, médinas et désert étoilé.</p>
+              </div>
+            </button>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="card">
+            <button>
+              <div class="card__media">
+                <div class="card__media-img">
+                  <img
+                    src="https://picsum.photos/id/1019/1200/800"
+                    alt="New York"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div class="card__body">
+                <h3>New York</h3>
+                <p>Architecture iconique et scènes culturelles.</p>
+              </div>
+            </button>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="card">
+            <button>
+              <div class="card__media">
+                <div class="card__media-img">
+                  <img
+                    src="https://picsum.photos/id/1043/1200/800"
+                    alt="Nouvelle-Zélande"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div class="card__body">
+                <h3>Nouvelle‑Zélande</h3>
+                <p>Terres volcaniques et aventures nature.</p>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <div class="container">
+        <div class="section__body">
+          <h2 class="section__title">Ils ont osé l’expérience</h2>
+          <p class="section__lead">
+            Des expériences uniques, partagées par nos clients.
+          </p>
+        </div>
+        <div class="testimonials__quote-grid grid">
+          <!-- Quote 1 -->
+          <div class="quote">
+            <blockquote>
+              <p>
+                « Un accompagnement humain et des détails qui transforment un
+                voyage en souvenir. »
+              </p>
+            </blockquote>
+            <p class="author">— Clara, Lyon</p>
+          </div>
+
+          <!-- Quote 2 -->
+          <div class="quote">
+            <blockquote>
+              <p>
+                « Séminaire clé-en-main, créatif et efficace : l’équipe est
+                revenue alignée et motivée. »
+              </p>
+            </blockquote>
+            <p class="author">— Marc, Paris</p>
+          </div>
+
+          <!-- Quote 3 -->
+          <div class="quote">
+            <blockquote>
+              <p>
+                « Notre lune de miel, sur mesure et sereine, restera gravée.
+                Merci ! »
+              </p>
+            </blockquote>
+            <p class="author">— Sofia & Luca, Barcelone</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact">
+      <div class="container">
+        <div class="section__body">
+          <h2 id="titre-contact" class="section__title">Contact & Devis</h2>
+          <p class="section__lead">
+            Dites-nous ce que vous souhaitez vivre : nous vous recontactons sous
+            24–48h.
+          </p>
+        </div>
+        <a href="#" class="btn">Accéder au formulaire complet (Fillout)</a>
+
+        <form action="https://formspree.io/f/XXXXXXX" method="POST">
+          <label
+            >Nom complet
+            <input name="name" autocomplete="name" required />
+          </label>
+          <label
+            >Email
+            <input type="email" name="email" autocomplete="email" required />
+          </label>
+          <label
+            >Téléphone (optionnel)
+            <input type="tel" name="phone" autocomplete="tel" />
+          </label>
+          <label
+            >Intérêt principal
+            <select name="topic">
+              <option value="Particuliers">Séjour particuliers</option>
+              <option value="Professionnels">Séminaire / Événement pro</option>
+              <option value="Lune de miel">Lune de miel</option>
+              <option value="Autre">Autre</option>
+            </select>
+          </label>
+          <label
+            >Message
+            <textarea
+              name="message"
+              placeholder="Destination (si vous en avez une), dates approximatives, envies…"
+            ></textarea>
+          </label>
+          <!-- RGPD consent -->
+          <label style="display: flex; align-items: center; gap: 0.5rem">
+            <input type="checkbox" name="consent" required />
+            <span>J’accepte la politique de confidentialité.</span>
+          </label>
+          <button class="btn" type="submit">Envoyer</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div>
+          <strong>Aikenjooy — Travel & Communication Hub</strong>
+          <p>
+            Agence tournée autour du voyage, de l’expérience et de la
+            communication.
+          </p>
+          <small
+            >© <span id="year"></span> Aikenjooy. Tous droits réservés.</small
+          >
+        </div>
+        <div>
+          <h3 style="margin: 0.2rem 0 0.6rem">Contact</h3>
+          <p>
+            <a href="mailto:boulangerie.le.levain@gmail.com"
+              >contact@aikenjooy.com</a
+            ><br />
+            <a href="tel:+33751234567">+33 7 51 23 45 67</a>
+          </p>
+          <p>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener"
+              >Instagram</a
+            >
+          </p>
+        </div>
+        <div>
+          <h3 style="margin: 0.2rem 0 0.6rem">Nous retrouver</h3>
+          <p>
+            <a
+              href="https://maps.app.goo.gl/y28ziQxt4pRpFFpQ6"
+              target="_blank"
+              rel="noopener"
+              >Voir sur Google Maps</a
+            >
+          </p>
+          <p>
+            <a href="#">Mentions légales</a> ·
+            <a href="#">Politique de confidentialité</a>
+          </p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
