@@ -32,6 +32,26 @@
   </head>
 
   <body>
+
+    <!-- Hero -->
+    <header class="hero">
+      <video autoplay muted loop preload="auto">
+        <source src="videos/video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <div class="hero__container container" data-reveal>
+        <div class="hero__content">
+          <h1>Osez l’expérience !</h1>
+          <p>
+            Agence tournée autour du voyage, de l’expérience et de la
+            communication. Des séjours sur mesure, des événements professionnels
+            et des histoires à vivre, du premier contact au souvenir partagé.
+          </p>
+        </div>
+      </div>
+    </header>
+
     <!-- Navbar -->
     <navbar class="navbar">
       <div class="navbar__container container">
@@ -45,10 +65,10 @@
               <a href="#" class="navbar__menu-link">Home</a>
             </li>
             <li class="navbar__menu-item">
-              <a href="#features" class="navbar__menu-link">Inspirations</a>
+              <a href="#inspirations" class="navbar__menu-link">Inspirations</a>
             </li>
             <li class="navbar__menu-item">
-              <a href="#preview" class="navbar__menu-link">Services</a>
+              <a href="#services" class="navbar__menu-link">Services</a>
             </li>
             <li class="navbar__menu-item">
               <a href="#details" class="navbar__menu-link">AikenBe Club</a>
@@ -63,30 +83,7 @@
         </div>
       </div>
     </navbar>
-
-    <!-- Hero -->
-    <header class="hero">
-      <video autoplay muted loop preload="auto">
-        <source src="videos/video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-
-      <div class="hero__container container">
-        <div class="hero__content">
-          <h1>Osez l’expérience !</h1>
-          <p>
-            Agence tournée autour du voyage, de l’expérience et de la
-            communication. Des séjours sur mesure, des événements professionnels
-            et des histoires à vivre, du premier contact au souvenir partagé.
-          </p>
-          <div class="hero__btns">
-            <a href="#" class="btn">Contactez-nous</a>
-            <a href="#" class="btn btn--ghost">Voir les inspirations</a>
-          </div>
-        </div>
-      </div>
-    </header>
-
+    
     <!-- About -->
     <section class="about">
       <div class="flex__container container">
@@ -136,7 +133,7 @@
     </section>
 
     <!-- Services -->
-    <section class="services">
+    <section class="services" id="services">
       <div class="services__container container">
         <h2 class="section__title">Services</h2>
         <p class="section__lead">
@@ -310,7 +307,7 @@
     </section>
 
     <!-- Inspirations (Catalogue) -->
-    <section class="inspirations">
+    <section class="inspirations" id="inspirations">
       <div class="container">
         <div class="section__body">
           <h2 class="section__title">Inspirations</h2>
@@ -606,5 +603,7 @@
         </div>
       </div>
     </footer>
+
+    <script src="js/script.js"></script>
   </body>
 </html>

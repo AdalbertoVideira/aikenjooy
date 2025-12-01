@@ -11,15 +11,25 @@
   --hero-title: 3rem;
   --section-title: 2rem;
   --section-lead: 1.2rem;
+  --hero-title-weight: 900;
+  --section-title-weight: 900;
+  --section-lead-weight: 400;
+
   /* Border */
   --border-radius: 0.2rem; /* Border Radius */
   --border-radius-rounded: 999rem; /* Border Radius Large */
+
   /* Brand Board */
   --primary-color: #f26903;
   --secondary-color: #20305a;
   --tertiary-color: #73a0e1;
   --light-color: #ffffff;
   --dark-color: #000000;
+
+  /* Intro animation */
+  --hero-height: 100vh;
+  --navbar-height: 6rem;
+  --animation-delay: 1s;
 }
 
 html,
@@ -49,7 +59,19 @@ button {
   background: none;
 }
 
-/* Container */
+/** Reveal animation **/
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-reveal].in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/** Container **/
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -62,9 +84,10 @@ button {
   gap: 4rem;
 }
 
-/* Section */
+/** Section **/
 section {
-  padding-top: 10rem;
+  padding-top: 2rem;
+  padding-bottom: 8rem;
 }
 
 .section__body ul {
@@ -75,7 +98,17 @@ section {
 }
 
 h2.section__title {
+  /* Font */
   font-size: var(--section-title);
+  font-weight: var(--section-title-weight);
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--light-color);
+
+  /* Style */
+  background-color: var(--secondary-color);
+  padding: 0.3rem 0.5rem;
+  display: inline-block;
   margin-bottom: 1rem;
 }
 
@@ -85,7 +118,7 @@ p.section__lead {
   margin-bottom: 1rem;
 }
 
-/* Button */
+/** Button **/
 .btn {
   display: inline-block;
   font-weight: 600;
@@ -102,7 +135,7 @@ p.section__lead {
   border: 2px solid var(--primary-color);
 }
 
-/* Card */
+/** Card **/
 .card {
   background-color: var(--light-color);
   border-radius: var(--border-radius);
@@ -149,7 +182,7 @@ p.section__lead {
   padding: 1rem;
 }
 
-/* Quote */
+/** Quote **/
 .quote {
   display: flex;
   flex-direction: column;
@@ -169,7 +202,7 @@ p.section__lead {
   margin-bottom: 1rem;
 }
 
-/* Grid Layout */
+/** Grid Layout **/
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(var(--min, 250px), 1fr));
@@ -177,9 +210,86 @@ p.section__lead {
   margin-top: 2rem;
 }
 
-/* Navbar */
+/*^ Hero ^*/
+.hero {
+  position: relative;
+  width: 100%;
+  height: var(--hero-height);
+  overflow: hidden;
+  transition: height var(--animation-delay) ease;
+}
+
+.hero video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1; /* Places video behind content */
+}
+
+.hero::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 5; /* Overlay between video and content */
+}
+
+.hero__container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10; /* Content above overlay and video */
+  padding: 0 2rem;
+}
+
+.hero__content {
+  width: 100%;
+  color: var(--light-color);
+  z-index: 15; /* Ensures content is above everything */
+}
+
+.hero__content h1 {
+  font-size: var(--hero-title);
+  font-weight: var(--hero-title-weight);
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.hero__content p {
+  font-size: var(--section-lead);
+  margin-bottom: 1rem;
+  padding: 0 30% 0 0;
+}
+
+.hero__btns {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.hero .btn--ghost {
+  color: var(--light-color);
+}
+
+.hero-loaded {
+  height: calc(var(--hero-height) - var(--navbar-height)) !important;
+}
+
+/*^ Navbar ^*/
 .navbar {
-  display: block;
+  height: var(--navbar-height);
+  z-index: 1000;
   padding: 1rem 2rem;
   background-color: var(--light-color);
 }
@@ -223,80 +333,7 @@ p.section__lead {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Hero */
-.hero {
-  height: 100vh;
-  width: 100%;
-  position: relative;
-}
-
-.hero video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1; /* Places video behind content */
-}
-
-.hero::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  content: "";
-  background-color: rgba(0, 0, 0, 0.2);
-  z-index: 5; /* Overlay between video and content */
-}
-
-.hero__container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10; /* Content above overlay and video */
-  padding: 0 2rem;
-}
-
-.hero__content {
-  width: 100%;
-  color: var(--light-color);
-  z-index: 15; /* Ensures content is above everything */
-}
-
-.hero__content h1 {
-  font-size: var(--hero-title);
-  text-transform: uppercase;
-  line-height: 1;
-  margin-bottom: 1rem;
-  background-color: var(--secondary-color);
-  padding: 0.5rem 1rem;
-  display: inline-block;
-  border-radius: var(--border-radius);
-}
-
-.hero__content p {
-  font-size: var(--section-lead);
-  margin-bottom: 2rem;
-  padding: 0 30% 0 0;
-}
-
-.hero__btns {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 1rem;
-}
-
-.hero .btn--ghost {
-  color: var(--light-color);
-}
-
-/* Inspirations */
+/*^ Inspirations ^*/
 .inspirations .buttons {
   display: flex;
   align-items: center;
@@ -312,7 +349,7 @@ p.section__lead {
   border: 1px solid var(--primary-color);
 }
 
-/* Contact */
+/*^ Contact ^*/
 form {
   display: grid;
   gap: 0.9rem;
@@ -347,7 +384,7 @@ textarea {
   resize: vertical;
 }
 
-/* Footer */
+/*^ Footer ^*/
 footer {
   background-color: var(--primary-color);
   color: var(--light-color);
@@ -366,7 +403,7 @@ footer a {
   text-decoration: underline;
 }
 
-/* Media Queries */
+/** Media Queries **/
 @media (max-width: 1200px) {
 }
 
